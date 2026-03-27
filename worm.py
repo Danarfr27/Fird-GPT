@@ -136,14 +136,15 @@ def main():
     print("=" * 50)
     print("\nAI: Halo, ada yang bisa saya bantu?\n")
 
+
     while True:
-        user_input = input("Kamu: ").strip()
+        user_input = input(f"{fore.LIGHTYELLOW_EX}Kamu{style.RESET_ALL} : ").strip()
 
         if not user_input:
             continue
 
         if user_input.lower() in ("exit", "keluar"):
-            print("\nAI: Sampai jumpa.")
+            print(f"\n{fore.LIGHTGREEN_EX}AI{style.RESET_ALL} : Sampai jumpa.")
             break
 
         if user_input.lower() == "reset":
@@ -154,12 +155,12 @@ def main():
             })
             clear_terminal()
             print("Percakapan di-reset.")
-            print("\nAI: Percakapan baru siap.\n")
+            print(f"\n{fore.LIGHTGREEN_EX}AI{style.RESET_ALL} : Percakapan baru siap.\n")
             continue
 
         loading()
         reply = chat_with_ai(user_input)
-        print(f"AI: {reply}\n")
+        print(f"{fore.LIGHTGREEN_EX}AI{style.RESET_ALL} : {reply}\n")
 
 
 # =====================================================
