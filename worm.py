@@ -138,12 +138,13 @@ def main():
 
 
     while True:
+
         user_input = input(f"{fore.LIGHTYELLOW_EX}Kamu{style.RESET_ALL} : ").strip()
 
         if not user_input:
             continue
 
-        if user_input.lower() in ("exit", "keluar"):
+        if user_input.lower() in ("bijil", "keluar"):
             print(f"\n{fore.LIGHTGREEN_EX}AI{style.RESET_ALL} : Sampai jumpa.")
             break
 
@@ -158,6 +159,7 @@ def main():
             print(f"\n{fore.LIGHTGREEN_EX}AI{style.RESET_ALL} : Percakapan baru siap.\n")
             continue
 
+        print("\n\n", end="")  # Add two blank lines between user and AI output
         loading()
         reply = chat_with_ai(user_input)
         print(f"{fore.LIGHTGREEN_EX}AI{style.RESET_ALL} : {reply}\n")
